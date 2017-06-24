@@ -14,6 +14,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     Button Login,Signup,admin;
@@ -22,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     EditText username,password;
     FirebaseAuth auth;
     ProgressDialog progress;
+    DatabaseReference db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     password.setError("Please enter password");}
                 else{
                 progress.setMessage("Logging in.....");
-                if (uname.equals("rajeshkumaranraj@gmail.com") && pwd.equals("11111111")) {
+                if (uname.equals("a@gmail.com") && pwd.equals("11111111")) {
                     Intent i = new Intent(MainActivity.this, AdminActivity.class);
                     startActivity(i);
                     finish();
@@ -79,7 +88,29 @@ public class MainActivity extends AppCompatActivity {
                                         Toast.makeText(MainActivity.this, "login Failed" + task.getException(), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
-                                    Toast.makeText(MainActivity.this, "login Success", Toast.LENGTH_LONG).show();
+                                  Toast.makeText(MainActivity.this, "login Success", Toast.LENGTH_LONG).show();
+                                   //uname;
+                                    /*
+                                    db=FirebaseDatabase.getInstance().getReference("dealers");
+                                    db.addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(DataSnapshot dataSnapshot) {
+                                            Iterable<DataSnapshot> i = dataSnapshot.getChildren();
+                                            ArrayList<String> d = new ArrayList<String>();
+                                            for(DataSnapshot ds : i ){
+                                                Dealer dl = ds.getValue(Dealer.class);
+                                                Toast.makeText(getApplicationContext(),dl.Email,Toast.LENGTH_LONG);
+                                                d.add(dl.Email);
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(DatabaseError databaseError) {
+                                            Toast.makeText(getApplicationContext(),"ERROR",Toast.LENGTH_LONG);
+
+                                        }
+                                    });
+                                    */
                                     intent = new Intent(MainActivity.this, SecondActivity.class);
                                     startActivity(intent);
                                     finish();

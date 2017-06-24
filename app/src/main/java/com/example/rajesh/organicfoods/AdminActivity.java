@@ -15,6 +15,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Locale;
@@ -34,7 +36,7 @@ import jxl.write.biff.RowsExceededException;
 
 public class AdminActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,7 +129,11 @@ public class AdminActivity extends AppCompatActivity
         } else if (id == R.id.Add_dealer) {
             startActivity( new Intent(AdminActivity.this,AddDealer.class));
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.Log_out) {
+            //closing activity
+            finish();
+            //starting login activity
+            startActivity(new Intent(this, MainActivity.class));
 
         }
 

@@ -34,7 +34,12 @@
         <activity android:name=".CartDisplay" />
         <activity android:name=".ViewOrders" />
         <activity android:name=".DeliveredItems" />
-        <activity android:name=".AddDealer"></activity>
+        <activity android:name=".AddDealer" />
+
+        <activity
+            android:name=".dealerScreen"
+            android:label="@string/title_activity_dealer_screen"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

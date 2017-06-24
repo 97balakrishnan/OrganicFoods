@@ -76,13 +76,14 @@ static int ship=1;
             public void onCancelled(DatabaseError databaseError) {
                 // Getting Post failed, log a message
                 System.out.println("loadPost:onCancelled"+ databaseError.toException());
-                // ...
+                // ......
             }
         };
         mDatabase.child("users").addValueEventListener(postListener);
 
               // System.out.println(customerName);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.hide();
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

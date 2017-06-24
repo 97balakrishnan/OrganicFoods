@@ -3,33 +3,33 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/Addproducts"
+            android:id="@+id/nav_camera"
             android:icon="@drawable/ic_menu_camera"
-            android:title="Add Products" />
+            android:title="Import" />
         <item
-            android:id="@+id/View_Orders"
+            android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="View on process orders" />
+            android:title="Gallery" />
         <item
-            android:id="@+id/excel"
+            android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="Excel" />
+            android:title="Slideshow" />
         <item
-            android:id="@+id/View_delivered"
+            android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
-            android:title="viewdelivered" />
+            android:title="Tools" />
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/Add_dealer"
+                android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Add Dealer" />
+                android:title="Share" />
             <item
-                android:id="@+id/Log_out"
+                android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="LogOut" />
+                android:title="Send" />
         </menu>
     </item>
 
