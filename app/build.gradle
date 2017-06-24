@@ -26,23 +26,24 @@ dependencies {
     compile files('libs/activation.jar')
     compile files('libs/additionnal.jar')
     compile files('libs/mail.jar')
-    compile 'com.android.support:appcompat-v7:25.3.1'
-    compile 'com.android.support:design:25.3.1'
-    compile 'com.google.firebase:firebase-core:9.2.0'
     // Analytics
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.google.firebase:firebase-database:9.2.0'
     //   Realtime Database
-    compile 'com.google.firebase:firebase-storage:9.2.0'
     //Storage
     // compile 'com.google.firebase:firebase-crash:9.2.0'    //Crash Reporting
-    compile 'com.google.firebase:firebase-auth:9.2.0'
     //Authentication
     // compile 'com.google.firebase:firebase-messaging:9.2.0'  //  Cloud Messaging and Notifications
     //compile 'com.google.firebase:firebase-config:9.2.0'   //Remote Config
     //compile 'com.google.firebase:firebase-invites:9.2.0'  //Invites and Dynamic Links
     //compile 'com.google.firebase:firebase-ads:9.2.0'  //AdMob
-    testCompile 'junit:junit:4.12'
     compile files('libs/jxl.jar')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.google.firebase:firebase-core:9.2.0'
+    compile 'com.google.firebase:firebase-database:9.2.0'
+    compile 'com.google.firebase:firebase-storage:9.2.0'
+    compile 'com.google.firebase:firebase-auth:9.2.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.1'
+    testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'

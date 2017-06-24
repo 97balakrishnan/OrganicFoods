@@ -124,7 +124,8 @@ public class AdminActivity extends AppCompatActivity
         } else if (id == R.id.View_delivered) {
             startActivity(new Intent(AdminActivity.this,DeliveredItems.class));
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.Add_dealer) {
+            startActivity( new Intent(AdminActivity.this,AddDealer.class));
 
         } else if (id == R.id.nav_send) {
 

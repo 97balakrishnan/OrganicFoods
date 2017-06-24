@@ -33,7 +33,8 @@
         <activity android:name=".FeedBackActivity" />
         <activity android:name=".CartDisplay" />
         <activity android:name=".ViewOrders" />
-        <activity android:name=".DeliveredItems"></activity>
+        <activity android:name=".DeliveredItems" />
+        <activity android:name=".AddDealer"></activity>
     </application>
 
 </manifest>
