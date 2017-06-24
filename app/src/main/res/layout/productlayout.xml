@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:descendantFocusability="blocksDescendants"
+
+    >
+
+    <TextView
+        android:id="@+id/productname"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/colorPrimary"
+        android:background="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        />
+
+    <ImageButton
+        android:id="@+id/productImage"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:textColor="#DAA420"
+        android:background="#FFFFFF"
+        android:textSize="18sp"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+
+        />
+
+</LinearLayout>

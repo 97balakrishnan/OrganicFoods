@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/popup_element"
+    android:background="@drawable/shapes1">
+
+
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:text="Product Name:"/>
+
+        <TextView
+    android:layout_width="300dp"
+    android:layout_height="50dp"
+    android:layout_marginLeft="180dp"
+            android:layout_marginTop="20dp"
+    android:id="@+id/productName"
+            android:text="product name"/>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="80dp"
+        android:text="Product Price:"/>
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="80dp"
+        android:text="product price"
+        android:id="@+id/productPrice"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="140dp"
+        android:text="Enter Quantity"
+        android:id="@+id/EnterQuantity"/>
+
+
+        <EditText
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:inputType="number"
+            android:layout_marginTop="125dp"
+            android:layout_marginLeft="180dp"
+            android:id="@+id/productquantity"
+
+            />
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="20dp"
+        android:textSize="15sp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="170dp"
+        android:text=""
+        android:textColor="#E5291D"
+        android:id="@+id/outofstock"/>
+
+
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:textSize="15sp"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="220dp"
+        android:text=""
+        android:textColor="#1ed000"
+        android:id="@+id/fromdate"/>
+
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/calendar"
+        android:id="@+id/startdate"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="213dp"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:textSize="15sp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="220dp"
+        android:text="Start date"
+        android:textColor="#000000"
+        android:id="@+id/fdate"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:textSize="15sp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="260dp"
+        android:text="End date"
+        android:textColor="#000000"
+        android:id="@+id/edate"/>
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:textSize="15sp"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="260dp"
+        android:text=""
+        android:textColor="#1ed000"
+        android:id="@+id/enddate"/>
+    <Button
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/calendar"
+        android:id="@+id/enddatebutton"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="260dp"/>
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:textSize="15sp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="330dp"
+        android:text=" "
+        android:textColor="#E5291D"
+        android:id="@+id/invalid"/>
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/cart"
+        android:id="@+id/addcart"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="370dp"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:textSize="15sp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="430dp"
+        android:text="Add to cart"
+        android:textColor="#000000"
+        android:id="@+id/add"/>
+
+
+
+</RelativeLayout>

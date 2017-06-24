@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "763929810723",
+    "firebase_url": "https://organicfood-58cd0.firebaseio.com",
+    "project_id": "organicfood-58cd0",
+    "storage_bucket": "organicfood-58cd0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763929810723:android:928b65ea20ef6678",
+        "android_client_info": {
+          "package_name": "com.example.rajesh.organicfoods"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763929810723-ubhqhcjtduosac2niqm58v46dlkabj3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9YZQVln1uNbUSrubd7PTCb-YogispoHs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763929810723:android:87b319824a8bbda1",
+        "android_client_info": {
+          "package_name": "com.example.raxit.supplier"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "763929810723-ubhqhcjtduosac2niqm58v46dlkabj3u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9YZQVln1uNbUSrubd7PTCb-YogispoHs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
