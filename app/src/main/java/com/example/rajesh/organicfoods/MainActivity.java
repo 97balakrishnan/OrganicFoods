@@ -14,6 +14,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -88,32 +89,53 @@ public class MainActivity extends AppCompatActivity {
                                         Toast.makeText(MainActivity.this, "login Failed" + task.getException(), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
-                                  Toast.makeText(MainActivity.this, "login Success", Toast.LENGTH_LONG).show();
+                                  //Toast.makeText(MainActivity.this, "login Success", Toast.LENGTH_LONG).show();
                                    //uname;
-                                    /*
-                                    db=FirebaseDatabase.getInstance().getReference("dealers");
-                                    db.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    final FirebaseUser user=auth.getCurrentUser();
+                                    DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference().child("dealers");
+
+                                    rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
                                         @Override
                                         public void onDataChange(DataSnapshot dataSnapshot) {
-                                            Iterable<DataSnapshot> i = dataSnapshot.getChildren();
-                                            ArrayList<String> d = new ArrayList<String>();
-                                            for(DataSnapshot ds : i ){
-                                                Dealer dl = ds.getValue(Dealer.class);
-                                                Toast.makeText(getApplicationContext(),dl.Email,Toast.LENGTH_LONG);
-                                                d.add(dl.Email);
+
+                                                if (dataSnapshot.hasChild(user.getUid())) {
+
+                                                    Toast.makeText(getApplicationContext(),"dealer logged",Toast.LENGTH_LONG).show();
+                                                    intent = new Intent(MainActivity.this, dealerScreen.class);
+                                                    startActivity(intent);
+                                                    finish();
+                                                }
+                                            }
+
+                                        @Override
+                                        public void onCancelled(DatabaseError databaseError) {
+
+                                        }
+
+                                    });
+
+                                    rootRef = FirebaseDatabase.getInstance().getReference().child("users");
+
+                                    rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(DataSnapshot dataSnapshot) {
+
+                                            if (dataSnapshot.hasChild(user.getUid())) {
+
+                                                Toast.makeText(getApplicationContext(),"user logged",Toast.LENGTH_LONG).show();
+                                                intent = new Intent(MainActivity.this, SecondActivity.class);
+                                                startActivity(intent);
+                                                finish();
                                             }
                                         }
 
                                         @Override
                                         public void onCancelled(DatabaseError databaseError) {
-                                            Toast.makeText(getApplicationContext(),"ERROR",Toast.LENGTH_LONG);
 
                                         }
+
                                     });
-                                    */
-                                    intent = new Intent(MainActivity.this, SecondActivity.class);
-                                    startActivity(intent);
-                                    finish();
+
                                 }
                             }
                         });
