@@ -24,9 +24,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class SecondActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
-static int ship=1;
+public class SecondActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    static int ship=1;
     FirebaseUser user;
     FirebaseAuth auth;
     NavigationView navigationView;

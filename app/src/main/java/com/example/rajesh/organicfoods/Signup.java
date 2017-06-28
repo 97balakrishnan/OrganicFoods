@@ -2,11 +2,13 @@ package com.example.rajesh.organicfoods;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -20,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Signup extends AppCompatActivity {
         static int flag=0;
-    EditText Name,email,password,cpassword,mobile,address;
+    EditText dealerID,Name,email,password,cpassword,mobile,address;
     Button signup;
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
@@ -30,6 +32,9 @@ public class Signup extends AppCompatActivity {
     CustomerDb customer;
     ProgressDialog progress;
     Intent intent;
+    CheckBox cb;
+    EditText et;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,11 +52,34 @@ public class Signup extends AppCompatActivity {
         mobile=(EditText)findViewById(R.id.mobile);
         address=(EditText)findViewById(R.id.address);
         signup=(Button)findViewById(R.id.signup);
-
+        dealerID=(EditText)findViewById(R.id.DealerID);
+        cb =(CheckBox)findViewById(R.id.checkBox);
+        et = (EditText)findViewById(R.id.DealerID);
+        cb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(cb.isEnabled())
+                {
+                    et.setEnabled(true);
+                    et.setBackgroundColor(Color.WHITE);
+                }
+                else
+                {
+                    et.setEnabled(false);
+                    et.setBackgroundColor(Color.GRAY);
+                }
+            }
+        });
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Name.length() != 0) {
+                if(cb.isEnabled() && dealerID.length()==0)
+                {
+                    Toast.makeText(getApplicationContext(), "Enter dealerID", Toast.LENGTH_SHORT).show();
+                    dealerID.requestFocus();
+                }
+
+                else if (Name.length() != 0) {
                     if (email.length() != 0) {
                         if (password.length() != 0 && password.length() >= 8) {
                             Email = email.getText().toString().trim();
@@ -116,8 +144,11 @@ public class Signup extends AppCompatActivity {
                                 String s=mdatabase.child("users").push().getKey();
                                 firebaseUser=firebaseAuth.getCurrentUser();
                                 customer.addDetails(Name.getText().toString(),email.getText().toString(),mobile.getText().toString(),address.getText().toString());
-                                Customer user = new Customer(Name.getText().toString(),mobile.getText().toString(),email.getText().toString(),password.getText().toString(),address.getText().toString());
+                                Customer user = new Customer(dealerID.getText().toString(),Name.getText().toString(),mobile.getText().toString(),email.getText().toString(),password.getText().toString(),address.getText().toString());
                                 mdatabase.child("users").child(firebaseUser.getUid()).setValue(user);
+                                String s1= mdatabase.child("DealerUser").push().getKey();
+                                mdatabase.child("DealerUser").child(dealerID.getText().toString()).setValue(Name.getText().toString());
+
                                 flag=1;
                                 startActivity(new Intent(Signup.this, SecondActivity.class));
                                 finish();

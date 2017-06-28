@@ -35,11 +35,12 @@
         <activity android:name=".ViewOrders" />
         <activity android:name=".DeliveredItems" />
         <activity android:name=".AddDealer" />
-
         <activity
             android:name=".dealerScreen"
             android:label="@string/title_activity_dealer_screen"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".approve_user" />
+        <activity android:name=".addDelboy"></activity>
     </application>
 
 </manifest>

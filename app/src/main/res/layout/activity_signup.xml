@@ -10,158 +10,170 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.rajesh.organicfoods.Signup"
     android:background="@drawable/blue">
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="630dp"
-    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="750dp"
+        android:orientation="vertical">
 
 
-
-
-    <TextView
-        android:layout_width="150dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="10dp"
-        android:text="Signup"
-        android:textColor="#DAA420"
-        android:textSize="25sp"
-        android:textStyle="bold"/>
-
-    <android.support.design.widget.TextInputLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/usernameFloat"
-        android:layout_width="220dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="90dp"
-        android:layout_marginLeft="40dp"
-        >
-
-        <EditText
-            android:layout_width="250dp"
+        <TextView
+            android:layout_width="150dp"
             android:layout_height="40dp"
-            android:hint="Name"
-            android:id="@+id/Name"
-            />
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:text="Signup"
+            android:textColor="#DAA420"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
-    </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/usernameFloat"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="90dp">
 
+            <EditText
+                android:id="@+id/Name"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint="Name" />
 
-    <android.support.design.widget.TextInputLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/emailfloat"
-        android:layout_width="220dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="160dp"
-        android:layout_marginLeft="40dp"
-        >
-
-        <EditText
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:hint="Email"
-            android:id="@+id/email"/>
-
-    </android.support.design.widget.TextInputLayout>
+        </android.support.design.widget.TextInputLayout>
 
 
+        <android.support.design.widget.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/emailfloat"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="160dp">
 
-    <android.support.design.widget.TextInputLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/Cpwdfloat"
-        android:layout_width="220dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="300dp"
-        android:layout_marginLeft="40dp"
-        >
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:hint="Email" />
 
-        <EditText
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:hint="Confirm Password"
-            android:id="@+id/cpassword"/>
-
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/PasswordFloat"
-        android:layout_width="220dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="230dp"
-        android:layout_marginLeft="40dp"
-        >
-
-        <EditText
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:hint="Password"
-            android:id="@+id/password"/>
-
-    </android.support.design.widget.TextInputLayout>
+        </android.support.design.widget.TextInputLayout>
 
 
-    <android.support.design.widget.TextInputLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/MobileFloat"
-        android:layout_width="220dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="370dp"
-        android:layout_marginLeft="40dp"
-        >
+        <android.support.design.widget.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/Cpwdfloat"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="300dp">
 
-        <EditText
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:hint="Mobile number"
-            android:id="@+id/mobile"/>
+            <EditText
+                android:id="@+id/cpassword"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint="Confirm Password" />
 
-    </android.support.design.widget.TextInputLayout>
+        </android.support.design.widget.TextInputLayout>
 
+        <android.support.design.widget.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/PasswordFloat"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="230dp">
 
-    <android.support.design.widget.TextInputLayout
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/Addressfloat"
-        android:layout_width="220dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="440dp"
-        android:layout_marginLeft="40dp"
-        >
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint="Password" />
 
-        <EditText
-            android:layout_width="250dp"
-            android:layout_height="40dp"
-            android:hint=" Address"
-            android:id="@+id/address"/>
-
-    </android.support.design.widget.TextInputLayout>
+        </android.support.design.widget.TextInputLayout>
 
 
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="510dp"
-        android:layout_marginLeft="90dp"
-        android:text="Signup"
-        android:textColor="#DAA420"
-        android:id="@+id/signup"
-        android:background="@drawable/transparent"
-        />
+        <android.support.design.widget.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/MobileFloat"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="370dp">
+
+            <EditText
+                android:id="@+id/mobile"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint="Mobile number" />
+
+        </android.support.design.widget.TextInputLayout>
 
 
-    <Button
-        android:layout_width="200dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="550dp"
-        android:layout_marginLeft="40dp"
-        android:text="Already a User? Login"
-        android:background="@android:color/transparent"
-        android:textColor="#DAA420"
-        android:id="@+id/login"
-        />
+        <android.support.design.widget.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/Addressfloat"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="440dp">
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint=" Address" />
+
+        </android.support.design.widget.TextInputLayout>
 
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/signup"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="630dp"
+            android:background="@drawable/transparent"
+            android:text="Signup"
+            android:textColor="#DAA420" />
+
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_alignLeft="@+id/Addressfloat"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/Addressfloat"
+            android:layout_marginBottom="21dp"
+            android:background="@android:color/transparent"
+            android:text="Already a User? Login"
+            android:textColor="#DAA420" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+
+            android:layout_marginTop="510dp"
+
+            android:text="DealerID" />
+        <android.support.design.widget.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/DealerIDfloat"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="550dp">
+
+            <EditText
+                android:id="@+id/DealerID"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint=" DealerID" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+
+    </RelativeLayout>
 
 
 
