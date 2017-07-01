@@ -9,4 +9,6 @@
     <string name="title_activity_second">SecondActivity</string>
     <string name="title_activity_admin">AdminActivity</string>
     <string name="title_activity_dealer_screen">dealerScreen</string>
+    <string name="title_activity_delboy_screen">delboyScreen</string>
+    <string name="title_activity_supplier">SupplierActivity</string>
 </resources>

@@ -1,9 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_addDelboy"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.rajesh.organicfoods.addDelboy">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.rajesh.organicfoods.addDelboy"
+    android:background="@drawable/blue">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="750dp"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="10dp"
+            android:text="Add Delivery man "
+            android:textColor="#DAA420"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <android.support.design.widget.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/usernameFloat"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="90dp">
+
+            <EditText
+                android:id="@+id/Name"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint="Name" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/emailfloat"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="160dp">
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="300dp"
+                android:layout_height="40dp"
+                android:hint="Email" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/Cpwdfloat"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="300dp">
+
+            <EditText
+                android:id="@+id/cpassword"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint="Confirm Password" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/PasswordFloat"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="230dp">
+
+            <EditText
+                android:id="@+id/password"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint="Password" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/MobileFloat"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="370dp">
+
+            <EditText
+                android:id="@+id/mobile"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint="Mobile number" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/Addressfloat"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="440dp">
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint=" Address" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/signup"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="630dp"
+            android:background="@drawable/transparent"
+            android:text="Add"
+            android:textColor="#DAA420" />
+
+
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+
+            android:layout_marginTop="510dp"
+
+            android:text="DealerID" />
+        <android.support.design.widget.TextInputLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/DealerIDfloat"
+            android:layout_width="220dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="550dp">
+
+            <EditText
+                android:id="@+id/DealerID"
+                android:layout_width="250dp"
+                android:layout_height="40dp"
+                android:hint=" DealerID" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+
+
+</ScrollView>

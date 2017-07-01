@@ -1,11 +1,12 @@
 package com.example.rajesh.organicfoods;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
+
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,7 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+
 
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -62,6 +63,7 @@ public class AdminActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        
     }
 
     @Override
@@ -131,9 +133,11 @@ public class AdminActivity extends AppCompatActivity
 
         } else if (id == R.id.Log_out) {
             //closing activity
+            auth=FirebaseAuth.getInstance();
+            auth.signOut();
             finish();
             //starting login activity
-            startActivity(new Intent(this, MainActivity.class));
+            startActivity(new Intent(AdminActivity.this, MainActivity.class));
 
         }
 
@@ -141,7 +145,7 @@ public class AdminActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
+/*
     public class ExcelStore {
         private WritableCellFormat timesBoldUnderline;
         private WritableCellFormat times;
@@ -238,7 +242,7 @@ public class AdminActivity extends AppCompatActivity
                 addLabel(sheet, 0, i, "Boring text " + i);
                 // Second column
                 addLabel(sheet, 1, i, "Another text");
-            }*/
+            }
         }
 
         private void addCaption(WritableSheet sheet, int column, int row, String s)
@@ -262,5 +266,5 @@ public class AdminActivity extends AppCompatActivity
             sheet.addCell(label);
         }
 
-    }
+    }*/
 }

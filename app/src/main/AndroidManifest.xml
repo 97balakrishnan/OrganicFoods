@@ -40,7 +40,15 @@
             android:label="@string/title_activity_dealer_screen"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".approve_user" />
-        <activity android:name=".addDelboy"></activity>
+        <activity android:name=".addDelboy" />
+        <activity
+            android:name=".delboyScreen"
+            android:label="@string/title_activity_delboy_screen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SupplierActivity"
+            android:label="@string/title_activity_supplier"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

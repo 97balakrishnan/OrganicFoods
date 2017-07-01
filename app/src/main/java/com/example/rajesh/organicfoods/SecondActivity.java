@@ -52,14 +52,14 @@ public class SecondActivity extends AppCompatActivity implements NavigationView.
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // Get Post object and use the values to update the UI
                 c=customerDb.getDb();
-
-                Customer customer = dataSnapshot.child(user.getUid()).getValue(Customer.class);
-                customerName=customer.customerName;
-                Mobile=customer.Mobile;
-                Mail=customer.Email;
-                Address=customer.Address;
-                System.out.println(customer.customerName+" "+customer.Mobile+" "+customer.Email+" "+customer.Address);
-
+                if(dataSnapshot.hasChild(user.getUid())) {
+                    Customer customer = dataSnapshot.child(user.getUid()).getValue(Customer.class);
+                    customerName = customer.customerName;
+                    Mobile = customer.Mobile;
+                    Mail = customer.Email;
+                    Address = customer.Address;
+                    System.out.println(customer.customerName + " " + customer.Mobile + " " + customer.Email + " " + customer.Address);
+                }
                 if(c==null){
                     customerDb.addDetails(customerName,Mail,Mobile,Address);
                 }

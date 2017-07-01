@@ -27,14 +27,14 @@ public class AddDealer extends AppCompatActivity {
     String Email,Password,Cpassword;
     DatabaseReference mdatabase;
     int ok=0;
-    DealerDB dealer;
+
     ProgressDialog progress;
     Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_dealer);
-        dealer=new DealerDB(this);
+
 
         firebaseAuth=FirebaseAuth.getInstance();
 
@@ -122,8 +122,8 @@ public class AddDealer extends AppCompatActivity {
                                 mdatabase= FirebaseDatabase.getInstance().getReference();
                                 String s=mdatabase.child("dealers").push().getKey();
                                 firebaseUser=firebaseAuth.getCurrentUser();
-                                dealer.addDetails(dealerID.getText().toString(),Name.getText().toString(),email.getText().toString(),mobile.getText().toString(),address.getText().toString());
-                                Customer user = new Customer(Name.getText().toString(),mobile.getText().toString(),email.getText().toString(),password.getText().toString(),address.getText().toString());
+
+                                Dealer user = new Dealer(dealerID.getText().toString(),Name.getText().toString(),mobile.getText().toString(),email.getText().toString(),password.getText().toString(),address.getText().toString());
                                 mdatabase.child("dealers").child(firebaseUser.getUid()).setValue(user);
                                 flag=1;
                                 Toast.makeText(getApplicationContext(),"DEALER account CREATED SUCCESSFULLY",Toast.LENGTH_SHORT);

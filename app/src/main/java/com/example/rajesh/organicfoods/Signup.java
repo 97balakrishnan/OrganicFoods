@@ -55,13 +55,14 @@ public class Signup extends AppCompatActivity {
         dealerID=(EditText)findViewById(R.id.DealerID);
         cb =(CheckBox)findViewById(R.id.checkBox);
         et = (EditText)findViewById(R.id.DealerID);
+        cb.setChecked(true);
         cb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(cb.isEnabled())
+                if(cb.isChecked())
                 {
                     et.setEnabled(true);
-                    et.setBackgroundColor(Color.WHITE);
+                    et.setBackgroundColor(Color.TRANSPARENT);
                 }
                 else
                 {
@@ -144,11 +145,23 @@ public class Signup extends AppCompatActivity {
                                 String s=mdatabase.child("users").push().getKey();
                                 firebaseUser=firebaseAuth.getCurrentUser();
                                 customer.addDetails(Name.getText().toString(),email.getText().toString(),mobile.getText().toString(),address.getText().toString());
-                                Customer user = new Customer(dealerID.getText().toString(),Name.getText().toString(),mobile.getText().toString(),email.getText().toString(),password.getText().toString(),address.getText().toString());
+                                Customer user;
+                                if(cb.isChecked()) {
+                                    user = new Customer(dealerID.getText().toString(), Name.getText().toString(), mobile.getText().toString(), email.getText().toString(), password.getText().toString(), address.getText().toString());
+                                }
+                                else
+                                {
+                                    user = new Customer("adminUser", Name.getText().toString(), mobile.getText().toString(), email.getText().toString(), password.getText().toString(), address.getText().toString());
+                                }
                                 mdatabase.child("users").child(firebaseUser.getUid()).setValue(user);
                                 String s1= mdatabase.child("DealerUser").push().getKey();
-                                mdatabase.child("DealerUser").child(dealerID.getText().toString()).setValue(Name.getText().toString());
-
+                                if(cb.isChecked()) {
+                                    mdatabase.child("DealerUser").child(dealerID.getText().toString()).push().setValue(Name.getText().toString());
+                                }
+                                else
+                                {
+                                    mdatabase.child("DealerUser").child("adminUsers").push().setValue(Name.getText().toString());
+                                }
                                 flag=1;
                                 startActivity(new Intent(Signup.this, SecondActivity.class));
                                 finish();

@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     String uname,pwd;
     EditText username,password;
     FirebaseAuth auth;
+    FirebaseUser user;
     ProgressDialog progress;
     DatabaseReference db;
 
@@ -38,21 +39,86 @@ public class MainActivity extends AppCompatActivity {
     public void checkLoggedin()
     {
         auth=FirebaseAuth.getInstance();
+
         if(auth.getCurrentUser() != null) {
-            finish();
+
+
+            user=auth.getCurrentUser();
+            db=FirebaseDatabase.getInstance().getReference();
+            db.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if(dataSnapshot.child("dealers").hasChild(user.getUid()))
+                    {
+                        startActivity(new Intent(MainActivity.this,dealerScreen.class));
+                        finish();
+                    }
+                    else if(dataSnapshot.child("users").hasChild(user.getUid()))
+                    {
+                        startActivity(new Intent(MainActivity.this,SecondActivity.class));
+                        finish();
+                    }
+                    else if(dataSnapshot.child("delboys").hasChild(user.getUid()))
+                    {
+                        startActivity(new Intent(MainActivity.this,delboyScreen.class));
+                        finish();
+
+                    }
+                    else if(dataSnapshot.child("admin").hasChild(user.getUid()))
+                    {
+                        startActivity(new Intent(MainActivity.this,AdminActivity.class));
+                        finish();
+
+                    }
+                    else if(dataSnapshot.child("suppliers").hasChild(user.getUid())){
+                        startActivity(new Intent(MainActivity.this,SupplierActivity.class));
+                        finish();
+                    }
+                    else
+                    {
+                        auth.signOut();
+                        startActivity(new Intent(MainActivity.this,MainActivity.class));
+                        finish();
+
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
             startActivity(new Intent(getApplicationContext(), SecondActivity.class));
         }
     }
 
-    public void checkAdmin(String u,String p)
+    public void checkAdmin()
     {
 
-        if (u.equals("a@gmail.com") && p.equals("11111111"))
-        {
-            Intent i = new Intent(MainActivity.this, AdminActivity.class);
-            startActivity(i);
-            finish();
-        }
+        final FirebaseUser user=auth.getCurrentUser();
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference().child("admin");
+
+        rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if (dataSnapshot.hasChild(user.getUid())) {
+
+                    Toast.makeText(getApplicationContext(),"admin logged",Toast.LENGTH_LONG).show();
+                    intent = new Intent(MainActivity.this, AdminActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+        });
+
     }
     public void checkDealer()
     {
@@ -109,10 +175,56 @@ public class MainActivity extends AppCompatActivity {
     }
     public void checkDeliveryboy()
     {
+        final FirebaseUser user=auth.getCurrentUser();
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference().child("delboys");
+
+        rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if (dataSnapshot.hasChild(user.getUid())) {
+
+                    Toast.makeText(getApplicationContext(),"delivery man logged",Toast.LENGTH_LONG).show();
+                    intent = new Intent(MainActivity.this, delboyScreen.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+        });
+
 
     }
     public void checkSupplier()
     {
+
+        final FirebaseUser user=auth.getCurrentUser();
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference().child("suppliers");
+
+        rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                if (dataSnapshot.hasChild(user.getUid())) {
+
+                    Toast.makeText(getApplicationContext(),"supplier logged",Toast.LENGTH_LONG).show();
+                    intent = new Intent(MainActivity.this, SupplierActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+
+        });
 
     }
 
@@ -156,7 +268,7 @@ public class MainActivity extends AppCompatActivity {
                 {
 
 
-                    checkAdmin(uname,pwd);
+                   // checkAdmin(uname,pwd);
 
                     progress.setMessage("Logging in.....");
                     progress.show();
@@ -180,7 +292,8 @@ public class MainActivity extends AppCompatActivity {
                                 }
                                 else
                                 {
-
+                                    Toast.makeText(getApplicationContext(),"Hellolo",Toast.LENGTH_LONG).show();
+                                    checkAdmin();
                                     checkDealer();
                                     checkUser();
                                     checkDeliveryboy();
